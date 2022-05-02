@@ -1,0 +1,31 @@
+// Break points
+@media (min-width: 64em) {
+  //styles go here.
+}
+//640px, 1024px , 1400px
+// at this point and bigger you should use certain styels
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+
+// 639px , 1023px , 1400px
+// At this point and smaller use this certain styles.
+$breakpoints-down: (
+  "small": "39.937em",
+  "medium": "63.937em",
+  "large": "84.937em",
+);
+
+@mixin breakpoints-up($size) {
+  @media (min-width: map-get($breakpoints-up ,$size)) {
+    @content;
+  }
+}
+
+@mixin breakpoints-down($size) {
+  @media (max-width: map-get($breakpoints-down ,$size)) {
+    @content;
+  }
+}
