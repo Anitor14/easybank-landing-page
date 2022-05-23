@@ -1,6 +1,12 @@
 .hero {
+  background-color: $veryLightGray;
+  .container {
+    @include breakpoints-up(large) {
+      display: flex;
+      align-items: center;
+    }
+  }
   &__image {
-    // border: 1px solid magenta;
     position: relative;
     background-image: url("/images/bg-intro-mobile.svg");
     background-size: cover;
@@ -8,6 +14,15 @@
     background-position: center center;
     min-height: 17.5rem;
     z-index: -53847;
+
+    @include breakpoints-up(large) {
+      flex: 3;
+      order: 2;
+      min-height: 41rem;
+      background-image: url("/images/bg-intro-desktop.svg");
+      background-position: left center;
+      // height: 100%;
+    }
 
     &::before {
       content: "";
@@ -23,12 +38,22 @@
 
   &__text {
     text-align: center;
+
+    @include breakpoints-up(large) {
+      flex: 2;
+      order: 1;
+      text-align: left;
+    }
     h1 {
       font-weight: 300;
       font: size 2.3125rem;
       line-height: 1.15;
       color: $darkBlue;
       margin-bottom: 1.5rem;
+
+      @include breakpoints-up(large) {
+        font-size: $font-xlg;
+      }
     }
     p {
       line-height: 1.5;
