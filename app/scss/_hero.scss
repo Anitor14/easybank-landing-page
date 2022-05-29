@@ -14,7 +14,7 @@
     background-position: center center;
     min-height: 17.5rem;
     // z-index: -53847;
-    @include breakpoint-up(medium) {
+    @include breakpoints-up(medium) {
       min-height: 25rem;
       background-position: center 60%;
     }
@@ -51,7 +51,7 @@
       background-repeat: no-repeat;
       background-position: center bottom;
 
-      @include breakpoint-up(medium) {
+      @include breakpoints-up(medium) {
         background-size: 52%;
       }
 
