@@ -1,10 +1,22 @@
 .feature {
-  &__grid {
+  &__intro {
     @include breakpoints-up(large) {
+      width: 60%;
+      margin-bottom: 3.75rem;
+    }
+  }
+  &__grid {
+    @include breakpoints-up(medium) {
       display: flex;
+      flex-wrap: wrap;
     }
   }
   &__item {
+    border: 1px solid magenta;
+    padding: 0.937rem;
+    @include breakpoints-up(medium) {
+      flex: 1 0 50%;
+    }
     @include breakpoints-up(large) {
       flex: 1;
     }
