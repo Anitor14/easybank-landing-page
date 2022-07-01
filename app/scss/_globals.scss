@@ -133,7 +133,7 @@ button,
 .button {
   display: inline-block;
   padding: 0.875rem 2.1875rem;
-  background: linear-gradient(to right, $limeGreen, $brightCyan);
+  background-image: linear-gradient(to right, $limeGreen, $brightCyan);
   border-radius: 50px;
   cursor: pointer;
   border: none;
@@ -141,9 +141,17 @@ button,
   font-weight: 400;
   font-size: $font-sm;
   transition: opacity 300ms ease-in-out;
-
-  &:hover {
-    opacity: 0.75;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+    opacity: 0;
+    transition: 150ms ease-in-out;
+  }
+  &:hover::before {
+    opacity: 1;
   }
 }
 
